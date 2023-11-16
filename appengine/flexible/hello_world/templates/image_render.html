@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Birds</title>
+    </head>
+
+    <body>
+
+        <form action="{{ url_for('analyze') }}" enctype="multipart/form-data" method="POST">
+            <input name="img" type="file"/>
+            <input type="submit"/>
+        </form>
+
+        {% if original_img %}
+            <h3>predicted cls: {{out}}</h3>
+
+            <figure>
+                <img src="{{ original_img }}">
+                <figcaption> original_img </figcaption>
+            </figure>
+
+            <br>
+
+            <figure>
+                <img src="{{ prototype_activation_map_by_top_1_prototype_png }}">
+                <figcaption> prototype_activation_map_by_top_1_prototype.png </figcaption>
+            </figure>
+        
+            <figure>
+                <img src="{{ prototype_activation_map_by_top_2_prototype_png }}">
+                <figcaption> prototype_activation_map_by_top_2_prototype.png </figcaption>
+            </figure>
+        
+            <figure>
+                <img src="{{ prototype_activation_map_by_top_3_prototype_png }}">
+                <figcaption> prototype_activation_map_by_top_3_prototype.png </figcaption>
+            </figure>
+        
+            <figure>
+                <img src="{{ prototype_activation_map_by_top_4_prototype_png }}">
+                <figcaption> prototype_activation_map_by_top_4_prototype.png </figcaption>
+            </figure>
+        
+            <figure>
+                <img src="{{ prototype_activation_map_by_top_5_prototype_png }}">
+                <figcaption> prototype_activation_map_by_top_5_prototype.png </figcaption>
+            </figure>
+        
+            <figure>
+                <img src="{{ prototype_activation_map_by_top_6_prototype_png }}">
+                <figcaption> prototype_activation_map_by_top_6_prototype.png </figcaption>
+            </figure>
+        
+            <figure>
+                <img src="{{ prototype_activation_map_by_top_7_prototype_png }}">
+                <figcaption> prototype_activation_map_by_top_7_prototype.png </figcaption>
+            </figure>
+        
+            <figure>
+                <img src="{{ prototype_activation_map_by_top_8_prototype_png }}">
+                <figcaption> prototype_activation_map_by_top_8_prototype.png </figcaption>
+            </figure>
+        
+            <figure>
+                <img src="{{ prototype_activation_map_by_top_9_prototype_png }}">
+                <figcaption> prototype_activation_map_by_top_9_prototype.png </figcaption>
+            </figure>
+        
+            <figure>
+                <img src="{{ prototype_activation_map_by_top_10_prototype_png }}">
+                <figcaption> prototype_activation_map_by_top_10_prototype.png </figcaption>
+            </figure>
+        {% else %}
+            <h3>{{out}}</h3>
+        {% endif %}
+
+    </body>
+</html>
+
